@@ -1,0 +1,82 @@
+{
+  "api": {
+    "name": "DeviceAudioPlugin",
+    "slug": "deviceaudioplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "restoreDeviceAudio",
+        "signature": "(options: DeviceAudioState) => Promise<boolean>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "DeviceAudioState"
+          }
+        ],
+        "returns": "Promise<boolean>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "DeviceAudioState"
+        ],
+        "slug": "restoredeviceaudio"
+      },
+      {
+        "name": "saveAndMuteDeviceAudio",
+        "signature": "(options: {}) => Promise<DeviceAudioState>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{}"
+          }
+        ],
+        "returns": "Promise<DeviceAudioState>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "DeviceAudioState"
+        ],
+        "slug": "saveandmutedeviceaudio"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "DeviceAudioState",
+      "slug": "deviceaudiostate",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "ringer",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "media",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "do_not_disturb",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        }
+      ]
+    }
+  ],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}

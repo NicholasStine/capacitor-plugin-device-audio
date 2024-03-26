@@ -1,3 +1,10 @@
+export interface DeviceAudioState{
+  ringer: number,
+  media: number,
+  do_not_disturb: boolean
+}
+
 export interface DeviceAudioPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  restoreDeviceAudio(options: DeviceAudioState): Promise<boolean>;
+  saveAndMuteDeviceAudio(options: { }): Promise<DeviceAudioState>;
 }

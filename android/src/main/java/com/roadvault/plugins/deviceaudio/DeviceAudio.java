@@ -1,11 +1,14 @@
 package com.roadvault.plugins.deviceaudio;
 
-import android.util.Log;
+//import android.util.Log;
+
+import com.getcapacitor.JSObject;
 
 public class DeviceAudio {
-
-    public String echo(String value) {
-        Log.i("Echo", value);
-        return value;
+    public void saveAndMuteDeviceAudio() {
+//        return new JSObject()
+//                .put("ringer", 0)
+//                .put("media", 0)
+//                .put("do_not_disturb", false );
     }
 }

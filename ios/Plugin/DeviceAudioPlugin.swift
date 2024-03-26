@@ -9,10 +9,11 @@ import Capacitor
 public class DeviceAudioPlugin: CAPPlugin {
     private let implementation = DeviceAudio()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    @objc func saveAndMuteDeviceAudio(_ call: CAPPluginCall) {
+        call.resolve([ "value": implementation.saveAndMuteDeviceAudio(CAPPluginCall()) ])
+    }
+
+    @objc func restoreDeviceAudio(_ call: CAPPluginCall) {
+        call.resolve([ true ])
     }
 }

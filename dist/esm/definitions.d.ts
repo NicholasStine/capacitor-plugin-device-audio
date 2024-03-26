@@ -1,6 +1,6 @@
 export interface DeviceAudioState {
     ringer: number;
-    media: number;
+    system: number;
     do_not_disturb: boolean;
 }
 export interface DeviceAudioPlugin {

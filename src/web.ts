@@ -9,6 +9,6 @@ export class DeviceAudioWeb extends WebPlugin implements DeviceAudioPlugin {
   }
   async saveAndMuteDeviceAudio(options: { }): Promise<DeviceAudioState> {
     console.log('ECHO', options);
-    return{ringer: 0, media: 0, do_not_disturb: false };
+    return{ringer: 0, system: 0, do_not_disturb: false };
   }
 }

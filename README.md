@@ -60,7 +60,7 @@ saveAndMuteDeviceAudio(options: {}) => Promise<DeviceAudioState>
 | Prop                 | Type                 |
 | -------------------- | -------------------- |
 | **`ringer`**         | <code>number</code>  |
-| **`media`**          | <code>number</code>  |
+| **`system`**         | <code>number</code>  |
 | **`do_not_disturb`** | <code>boolean</code> |
 
 </docgen-api>

@@ -60,7 +60,7 @@
           "type": "number"
         },
         {
-          "name": "media",
+          "name": "system",
           "tags": [],
           "docs": "",
           "complexTypes": [],

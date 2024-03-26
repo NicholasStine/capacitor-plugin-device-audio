@@ -8,12 +8,12 @@ import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
 import android.app.NotificationManager;
-import android.media.AudioDeviceInfo;
-import android.media.AudioPlaybackConfiguration;
+import android.system.AudioDeviceInfo;
+import android.system.AudioPlaybackConfiguration;
 import android.os.Build;
-import android.provider.MediaStore;
+import android.provider.systemStore;
 import android.util.Log;
-import android.media.AudioManager;
+import android.system.AudioManager;
 import android.content.Context;
 
 import java.util.List;
@@ -35,15 +35,15 @@ public class DeviceAudioPlugin extends Plugin  {
     public void restoreDeviceAudio(PluginCall call) {
         Log.i("DeviceAudio", "running restoreDeviceAudio");
         int ringer = call.getInt("ringer");
-        int media = call.getInt("media");
+        int system = call.getInt("system");
         boolean dnd = call.getBoolean("do_not_disturb");
 
         Log.i("DeviceAudio", String.valueOf(ringer));
-        Log.i("DeviceAudio", String.valueOf(media));
+        Log.i("DeviceAudio", String.valueOf(system));
         Log.i("DeviceAudio", String.valueOf(dnd));
 
         audioManager.setStreamVolume(AudioManager.STREAM_RING, ringer, 0);
-        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, media, 0);
+        audioManager.setStreamVolume(AudioManager.STREAM_SYSTEM, system, 0);
         if (dnd) audioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
     }
 
@@ -53,7 +53,7 @@ public class DeviceAudioPlugin extends Plugin  {
          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // Get the audio state
             int ringerVolume = audioManager.getStreamVolume(AudioManager.STREAM_RING);
-            int mediaVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+            int systemVolume = audioManager.getStreamVolume(AudioManager.STREAM_SYSTEM);
             boolean doNotDisturb = audioManager.getRingerMode() == AudioManager.RINGER_MODE_SILENT;
 
             boolean isDND = isDoNotDisturbEnabled(context);
@@ -68,11 +68,11 @@ public class DeviceAudioPlugin extends Plugin  {
 
             // Resolve the plugin call with the current audio state
             Log.i("DeviceAudio", String.valueOf(ringerVolume));
-            Log.i("DeviceAudio", String.valueOf(mediaVolume));
+            Log.i("DeviceAudio", String.valueOf(systemVolume));
             Log.i("DeviceAudio", String.valueOf(doNotDisturb));
             call.resolve(new JSObject()
                 .put("ringer", ringerVolume)
-                .put("media", mediaVolume)
+                .put("system", systemVolume)
                 .put("do_not_disturb", doNotDisturb)
             );
          }

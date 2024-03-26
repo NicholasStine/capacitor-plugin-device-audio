@@ -12,7 +12,7 @@ var capacitorDeviceAudio = (function (exports, core) {
         }
         async saveAndMuteDeviceAudio(options) {
             console.log('ECHO', options);
-            return { ringer: 0, media: 0, do_not_disturb: false };
+            return { ringer: 0, system: 0, do_not_disturb: false };
         }
     }
 

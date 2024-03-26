@@ -14,6 +14,6 @@ public class DeviceAudioPlugin: CAPPlugin {
     }
 
     @objc func restoreDeviceAudio(_ call: CAPPluginCall) {
-        call.resolve([ true ])
+        call.resolve([ "value": true ])
     }
 }

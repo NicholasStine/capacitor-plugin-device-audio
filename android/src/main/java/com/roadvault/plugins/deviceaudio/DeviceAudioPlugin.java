@@ -8,15 +8,10 @@ import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
 import android.app.NotificationManager;
-import android.system.AudioDeviceInfo;
-import android.system.AudioPlaybackConfiguration;
 import android.os.Build;
-import android.provider.systemStore;
 import android.util.Log;
-import android.system.AudioManager;
+import android.media.AudioManager;
 import android.content.Context;
-
-import java.util.List;
 
 @CapacitorPlugin(name = "DeviceAudio")
 public class DeviceAudioPlugin extends Plugin  {
